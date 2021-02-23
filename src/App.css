@@ -1,65 +1,56 @@
-.NewCommentForm__input {
-    display: block;
-    margin-top: 20px;
-}
-
 .App {
-    margin: 0 auto;
-    width: 600px;
+  margin: 0 auto;
+  width: 600px;
 }
-
-.button {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transition: background-color 0.5s;
-}
-
 .App__fill {
-    color: #4d457b;
-    font-size: 20px;
-    font-weight: bold;
+  color: #4d457b;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .NewCommentForm {
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  margin: 20px 0;
 }
-
+.NewCommentForm__input {
+  display: block;
+  margin-top: 20px;
+}
 .NewCommentForm__error {
-    color: red;
+  color: red;
 }
 
 .comments {
-    /*width: 500px;*/
-    border-radius: 5px;
-    padding: 10px;
-    /*text-align: center;*/
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  background-color: white;
 }
-
 .comments__item {
-    display: block;
-    padding: 5px;
-    width: 97%;
-    margin: 0 auto 5px auto;
-    /*text-align: center;*/
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    border-left: 10px solid #e2d8db;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: block;
+  padding: 5px;
+  width: 97%;
+  margin: 0 auto 5px auto;
+  border-left: 10px solid #e2d8db;
 }
-
 .comments__name {
-    color: #4d457b;
+  color: #4d457b;
+}
+.comments__date {
+  color: grey;
+  font-size: 10px;
+  padding-left: 5px;
 }
 
-.comments__date {
-    color: grey;
-    font-size: 10px;
-    padding-left: 5px;
+.button {
+  margin: 20px 0;
+  transition: background-color 0.5s;
 }
+
+/*# sourceMappingURL=App.css.map */
