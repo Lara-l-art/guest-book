@@ -1,5 +1,5 @@
-import './App.css';
-import React, { useState, useEffect } from 'react';
+import './App.scss';
+import React, {useState, useEffect} from 'react';
 import ShowAllComments from './components/ShowAllComments';
 import {getComments, onCommentSubmit} from './api/comments';
 
@@ -16,31 +16,29 @@ function App() {
 
   useEffect(() => {
     getComments().then(res => {
-      setComments([...res]);
+      setComments([...res].reverse());
     });
   }, [ident]);
 
   const addComment = () => {
     if (!text.trim() || !name.trim()) {
       setIsErrorVisible(true);
+    } else {
+      const date = new Date();
+      const newComment = {
+        name,
+        text,
+        id: date,
+        date: date.toLocaleDateString(),
+        time: date.toLocaleTimeString(),
+      };
 
-      return;
+      setCustomId(date);
+      setName('');
+      setText('');
+
+      onCommentSubmit(newComment);
     }
-
-    const date = new Date();
-    const newComment = {
-      name,
-      text,
-      id: date,
-      date: date.toLocaleDateString(),
-      time: date.toLocaleTimeString(),
-    };
-
-    setCustomId(date);
-    setName('');
-    setText('');
-
-    onCommentSubmit(newComment);
   }
 
   return (
@@ -69,7 +67,7 @@ function App() {
 
         {isErrorVisible && (
           <div className="NewCommentForm__error">
-            Write something
+            Please fill all fields
           </div>
         )}
 
@@ -82,7 +80,10 @@ function App() {
         </button>
       </form>
 
-      <ShowAllComments comments={comments} />
+      {comments.length > 0 && (
+        <ShowAllComments comments={comments}/>
+      )}
+
     </div>
   );
 }
