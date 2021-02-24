@@ -45,6 +45,10 @@ function App() {
     <div className="App">
       <form
         className="NewCommentForm"
+        onSubmit={(e) => {
+          e.preventDefault()
+          addComment()
+        }}
       >
         <p className="App__fill">Leave your comment</p>
         <input
@@ -74,7 +78,6 @@ function App() {
         <button
           type="submit"
           className="NewCommentForm__button button is-success is-light"
-          onClick={addComment}
         >
           Add a comment
         </button>
